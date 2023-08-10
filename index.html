@@ -9,6 +9,7 @@
   </head>
   <body>
     <div class="container">
+
       <h1>Password Generator</h1>
       <!-- Display Container -->
       <div class="display-container">
@@ -18,9 +19,9 @@
           class="display"
           data-passwordDisplay
         />
-        <button>
+        <button data-copy>
           <span data-copyMsg></span>
-          <img src="images/copy.svg" alt="" />
+          <img src="images/copy.svg" alt="copy"  width="23" height="23"/>
         </button>
       </div>
 
@@ -28,9 +29,10 @@
         <!-- Password length section -->
         <div class="length-container">
           <p>Password Length</p>
-          <p data-lengthNumber>0</p>
+          <p data-lengthNumber></p>
         </div>
 
+        <!-- Slider -->
         <input
           class="slider"
           type="range"
@@ -64,7 +66,7 @@
         <!-- Strength Section -->
 
         <div class="strength-container">
-          <p>Strength</p>
+          <p>Strength</p> 
           <div data-indicator>o</div>
         </div>
 
@@ -73,5 +75,7 @@
       </div>
 
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
