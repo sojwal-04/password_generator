@@ -18,7 +18,7 @@ const symbolsString = "~!@#$%^&*()_+={[}]|:;<>,.?/";
 let password = "";
 let passwordLength = 10;
 let checkedCount = 0;
-//Set the color of circle grey
+setIndicator("#ccc");
 
 //Handling the slider
 function handleSlider() {
@@ -70,7 +70,7 @@ function calculateStrength() {
   if (
     hasUpperCase &&
     hasLowerCase &&
-    (hasNumber || hasSymbol) && 
+    (hasNumber || hasSymbol) &&
     passwordLength >= 8
   ) {
     setIndicator("#0f0");
