@@ -60,6 +60,37 @@ h1 {
   padding-top: 0.35rem;
 }
 
+.copy-btn {
+  position: relative;
+  background-color: var(--dk-violet);
+  border: none;
+}
+
+.copy-msg {
+  position: absolute;
+  color: white;
+  font-size: 16px;
+  color: var(--vb-yellow);
+  top: 50%;
+  transform: translateY(-50%);
+  right: -100px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 5px 10px;
+  border-radius: 1rem;
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
+#copy-img {
+  background-color: var(--dk-violet);
+  outline: none;
+  border: none;
+  object-fit: cover;
+}
+
 .display {
   width: 100%;
   background-color: transparent;
@@ -158,6 +189,7 @@ h1 {
   color: var(--vb-yellow);
   font-weight: 600;
   font-size: 1.25rem;
+  cursor: pointer;
 }
 
 .check input {
@@ -191,4 +223,57 @@ h1 {
   color: var(--pl-white);
   font-size: 1.25rem;
   letter-spacing: 0.75px;
+}
+
+/*CSS for Slider*/
+
+.slider {
+  appearance: none;
+  width: 100%;
+  height: 0.75rem;
+  cursor: pointer;
+  background-color: var(--lt-violet);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  background-image: linear-gradient(to right, var(--lt-violet2), var(--vb-violet));
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  position: relative;
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: var(--vb-yellow);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 229, 61);
+  margin-top: -3px;
+  transition: all 100ms ease-in;
+}
+
+.slider::-moz-range-thumb {
+  position: relative;
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: var(--vb-yellow);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 229, 61);
+  margin-top: -3px;
+  transition: all 100ms ease-in;
+}
+
+.slider:focus {
+  outline: 2px solid var(--vb-yellow);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  outline: 2px solid var(--vb-yellow);
+  background-color: var(--dk-violet);
+  box-shadow: 0 0 25px 5px rgba(255, 229, 61, 0.8);
 }

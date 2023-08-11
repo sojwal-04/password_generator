@@ -24,13 +24,20 @@ setIndicator("#ccc");
 function handleSlider() {
   inputSlider.value = passwordLength;
   lengthDisplay.innerText = passwordLength;
+
+  //Background of slider
+  const min = inputSlider.min;
+  const max = inputSlider.max;
+
+  inputSlider.style.backgroundSize =
+    ((passwordLength - min) * 100) / (max - min) + "% 100%";
 }
 
 handleSlider();
 
 function setIndicator(color) {
   indicator.style.backgroundColor = color;
-  indicator.style.boxShadow = `0 0 10px ${color}`;
+  indicator.style.boxShadow = `0 0 20px ${color}`;
 }
 
 function getRandomInteger(min, max) {
@@ -55,7 +62,7 @@ function getSymbol() {
   let index = getRandomInteger(0, symbolsString.length);
   return symbolsString[index];
 }
-
+//Need to add Categories
 function calculateStrength() {
   let hasUpperCase = false;
   let hasLowerCase = false;
@@ -67,21 +74,23 @@ function calculateStrength() {
   if (numbersCheck.checked) hasNumber = true;
   if (symbolsCheck.checked) hasSymbol = true;
 
-  if (
+  if (passwordLength < 8) {
+    setIndicator("red"); // Weak password
+  } else if (
     hasUpperCase &&
     hasLowerCase &&
     (hasNumber || hasSymbol) &&
     passwordLength >= 8
   ) {
-    setIndicator("#0f0");
+    setIndicator("aqua"); // Strong password
   } else if (
     (hasLowerCase || hasUpperCase) &&
     (hasNumber || hasSymbol) &&
     passwordLength >= 6
   ) {
-    setIndicator("#0ff0");
+    setIndicator("orange"); // Moderate password
   } else {
-    setIndicator("#f00");
+    setIndicator("yellow"); // Fair password
   }
 }
 
